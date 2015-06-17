@@ -1,0 +1,21 @@
+This project contains an Oracle Package which inserts into a Log table all
+fields changed into a table. It includes an example table for test and usage
+purposes. The code is based on Zlatko Sirotic's work found in this forum post:
+https://community.oracle.com/thread/8380 
+
+This mechanism logs each column change on each register updated for the
+selected table.
+
+USAGE:
+1- Create the test tables used on the example (file: 'create_test_tables.sql').
+2- Create the package and the package body into your Oracle Database (file:
+'dynamic_new_old.sql').
+3- Create the 3 triggers for your tables(file: 'create_test_triggers.sql').
+4- Populate and update data into the table (file: 'test_data.sql').
+
+After running and understanding the example, the mecanism can be updated by
+changing the file 'dynamic_new_old.sql' for your purposes. NOTICE that the log
+table is not dynamic populated and probably will need changes before usage.
+
+The usage of the mecanism is based on the triggers generated, so it's needed to
+create each of them for all the tables to log.
